@@ -1,0 +1,137 @@
+/* // My variables
+// $sewaneePurple: #5e366e;
+// $font-stack: Verdana, sans-serif; */
+
+:root {
+  --sewaneePurple: #5e366e;
+  --font-stack: Verdana, sans-serif;
+}
+
+/* // Styling the Menu Heading -------------- */
+.menu-container {
+  width: 600px;
+  text-align: center;
+  height: auto;
+  padding-top: 50px;
+  font-family: cursive;
+}
+
+.menu-head-text {
+  font-size: 23px;
+  width: 90%;
+  font-weight: 900;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.left-arrow {
+  padding-right: 10px;
+  fill: #fff;
+  stroke: var(--sewaneePurple);
+  width: 20px;
+  cursor: pointer;
+}
+
+.left-arrow:hover {
+  transform: scale(1.13);
+}
+
+/* // End og Styling the Menu Heading --------------- */
+
+/* Styling Rows with Text ------------------ */
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+}
+
+.text {
+  text-decoration: none;
+  color: var(--sewaneePurple);
+  font-weight: bolder;
+  border: 1px solid var(--sewaneePurple);
+  background-color: #fff;
+  padding: 8px 5px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.text:hover {
+  background-color: var(--sewaneePurple);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.right-arrow-bg {
+  width: 5%;
+}
+
+.right-arrow {
+  fill: #fff;
+  width: 20px;
+  cursor: pointer;
+}
+
+.right-arrow:hover {
+  transform: scale(1.15);
+}
+
+/* Styling for the pop up iframe---------------------- */
+
+/* shadow background */
+.shadow {
+  /* // display: none; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* // padding-top: 10%; */
+  align-items: center;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Content */
+.popup-content {
+  position: relative;
+  margin: auto;
+  margin-top: 5.5%;
+  width: 80%;
+  height: 75%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px 5px #4d4d4d;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  left: -20px;
+  top: -30px;
+  font-size: 250%;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.close:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+/* Styling for Device with width <= 600px ------------ */
+
+@media only screen and (max-width: 600px) {
+  .menu-container {
+    width: 100%;
+  }
+
+  /* Styling for the pop up iframe for mobile version---------------------- */
+  /* // .shadow{
+  //   padding-top: 5%;
+  // } */
+  .popup-content {
+    margin-top: 18%;
+  }
+}
