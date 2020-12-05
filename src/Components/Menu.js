@@ -16,7 +16,7 @@ const Menu = ({ items }) => {
 
   // Function to back into the previous layer of column/menu
   const goBack = () => {
-    if (selectedIndex.length === 1) {
+    if (!selectedIndex.includes("b")) {
       setShowInitialMenu(true);
       setSelectedIndex("");
     } else {
@@ -24,6 +24,8 @@ const Menu = ({ items }) => {
       setSelectedIndex(newIndex);
     }
   };
+
+  // console.log(selectedIndex);
 
   return (
     <div className="menu-container">
@@ -38,67 +40,72 @@ const Menu = ({ items }) => {
             <LeftTriangleIcon className="left-arrow" />
           </span>
           <span>
-            {selectedIndex.length === 1
+            {!selectedIndex.includes("b")
               ? items[selectedIndex].name
-              : items[selectedIndex.substr(0, 1)].subMenu[
-                  selectedIndex.substr(1, 2)
-                ].name}
+              : !selectedIndex.includes("c") &&
+                items[selectedIndex.substring(0, selectedIndex.indexOf("b"))]
+                  .subMenu[selectedIndex.substr(selectedIndex.indexOf("b") + 1)]
+                  .name}
           </span>
         </div>
       )}
       {/* --------------------------------- */}
 
       {/* Rendering all the menus */}
-      {items.map((item, index) => (
-        <div key={`${item.name}${index}`}>
-          {/* Renders the first menu of the app */}
-          {showInitialMenu && (
-            <Row
-              index={`${index}`}
-              key={`${index}`}
-              handleMenuSelection={handleMenuSelection}
-              linkInfo={item.linkInfo}
-              rightIcon={item.rightIcon}
-              leftIcon={item.leftIcon}
-              name={item.name}
-            />
-          )}
-          {/* Renders the second menu of the app */}
-          {item.subMenu.map((item1, index1) => (
-            <>
-              {selectedIndex === `${index}` && (
-                <Row
-                  index={`${index}${index1}`} //00
-                  key={`${index}${index1}`}
-                  handleMenuSelection={handleMenuSelection}
-                  linkInfo={item1.linkInfo}
-                  rightIcon={item1.rightIcon}
-                  leftIcon={item1.leftIcon}
-                  name={item1.name}
-                />
-              )}
+      <div className="row-container">
+        {/* <span>Discipline</span> */}
+        {items.map((item, index) => (
+          <div key={`${item.name}${index}`}>
+            {/* Renders the first menu of the app */}
+            {showInitialMenu && (
+              <Row
+                index={`${index}`}
+                key={`${index}`}
+                handleMenuSelection={handleMenuSelection}
+                linkInfo={item.linkInfo}
+                rightIcon={item.rightIcon}
+                leftIcon={item.leftIcon}
+                name={item.name}
+              />
+            )}
+            {/* Renders the second menu of the app */}
+            {item.subMenu.map((item1, index1) => (
+              <>
+                {selectedIndex === `${index}` && (
+                  <Row
+                    index={`${index}b${index1}`} //00
+                    key={`${index}b${index1}`}
+                    handleMenuSelection={handleMenuSelection}
+                    linkInfo={item1.linkInfo}
+                    rightIcon={item1.rightIcon}
+                    leftIcon={item1.leftIcon}
+                    name={item1.name}
+                  />
+                )}
 
-              {/* Renders the third menu of the app */}
-              {item1.subMenu.map(
-                (item2, index2) =>
-                  selectedIndex === `${index}${index1}` && (
-                    <Row
-                      index={`${index}${index1}${index2}`} //000
-                      key={`${index}${index1}${index2}`}
-                      handleMenuSelection={handleMenuSelection}
-                      popUpLinkInfo={item2.popUpLinkInfo}
-                      rightIcon={item2.rightIcon}
-                      leftIcon={item2.leftIcon}
-                      popUp={item2.popUp}
-                      name={item2.name}
-                    />
-                  )
-              )}
-            </>
-          ))}
-        </div>
-        // End of Rendering all the menus
-      ))}
+                {/* Renders the third menu of the app */}
+                {item1.subMenu.map(
+                  (item2, index2) =>
+                    selectedIndex === `${index}b${index1}` && (
+                      <Row
+                        index={`${index}b${index1}c${index2}`} //000
+                        key={`${index}b${index1}c${index2}`}
+                        handleMenuSelection={handleMenuSelection}
+                        popUpLinkInfo={item2.popUpLinkInfo}
+                        rightIcon={item2.rightIcon}
+                        leftIcon={item2.leftIcon}
+                        popUp={item2.popUp}
+                        name={item2.name}
+                      />
+                    )
+                )}
+              </>
+            ))}
+          </div>
+
+          // End of Rendering all the menus
+        ))}
+      </div>
     </div>
   );
 };

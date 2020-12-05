@@ -12,7 +12,7 @@ function App() {
     {
       name: "Fine Arts",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {
@@ -286,7 +286,7 @@ function App() {
     {
       name: "Social Sciences ",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {
@@ -652,7 +652,7 @@ function App() {
     {
       name: "Sciences",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {
@@ -842,7 +842,7 @@ function App() {
     {
       name: "Math & Computer Science",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {
@@ -912,7 +912,7 @@ function App() {
     {
       name: "Humanities",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {
@@ -1636,7 +1636,7 @@ function App() {
     {
       name: "Advanced Foreign Language",
       hasSubMenu: true,
-      rightIcon: true,
+      // rightIcon: true,
       subMenu: [
         // Program
         {

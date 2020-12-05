@@ -1,74 +1,103 @@
 /* // My variables
 // $sewaneePurple: #5e366e;
 // $font-stack: Verdana, sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
   --sewaneePurple: #5e366e;
   --font-stack: Verdana, sans-serif;
+  --offwhite:#fefaff;
 }
 
 /* // Styling the Menu Heading -------------- */
 .menu-container {
   width: 600px;
   text-align: center;
-  height: auto;
-  padding-top: 50px;
-  font-family: cursive;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serifs;
+  margin: 5% auto 0px auto;
+  background-color:  #5e366e;
+  padding: 30px;
+  border-radius: 30px;
+  /* min-height: 500px; */
+
 }
 
 .menu-head-text {
-  font-size: 23px;
-  width: 90%;
+  font-size: 27px;
   font-weight: 900;
-  color: #fff;
-  padding-bottom: 10px;
+  color: var(--offwhite);
+  padding-bottom: 20px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.menu-head-text:hover {
+  transform: scale(1.13);
 }
 
 .left-arrow {
   padding-right: 10px;
   fill: #fff;
-  stroke: var(--sewaneePurple);
   width: 20px;
-  cursor: pointer;
-}
-
-.left-arrow:hover {
-  transform: scale(1.13);
 }
 
 /* // End og Styling the Menu Heading --------------- */
 
 /* Styling Rows with Text ------------------ */
-.row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 18px;
+
+
+.row-container{
+  /* max-height:500px; */
+  /* overflow-y: auto; */
+  border-radius: 20px;
 }
 
-.text {
-  text-decoration: none;
+
+
+.row {
+  font-size: 20px;
   color: var(--sewaneePurple);
   font-weight: bolder;
   border: 1px solid var(--sewaneePurple);
-  background-color: #fff;
-  padding: 8px 5px;
-  width: 90%;
+  background-color: #fefaff;
+  height: 80px;
+  width: 100%;
   border-radius: 10px;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
-.text:hover {
+.row:hover {
   background-color: var(--sewaneePurple);
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--offwhite);
+  color: var(--offwhite);
+  filter: brightness(1.2);
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .right-arrow-bg {
   width: 5%;
+  background-color: var(--sewaneePurple);
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.right-arrow-bg:hover {
+  filter: brightness(1.2);
 }
 
 .right-arrow {
-  fill: #fff;
+  fill: var(--offwhite);
   width: 20px;
   cursor: pointer;
 }
@@ -112,7 +141,7 @@
   top: -30px;
   font-size: 250%;
   font-weight: bolder;
-  color: #fff;
+  color: var(--offwhite);
 }
 
 .close:hover {
@@ -124,7 +153,8 @@
 
 @media only screen and (max-width: 600px) {
   .menu-container {
-    width: 100%;
+    width: auto;
+    margin: 0.5rem;
   }
 
   /* Styling for the pop up iframe for mobile version---------------------- */
